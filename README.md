@@ -3,7 +3,8 @@ A basic boilerplate for flask with flask-restful and pytest
 
 * Python 3.6
 * pytest 3.0.6
-* pytest-coverage 4.3.4
+* pytest-coverage 2.4.0
+* pytest-html 1.14.2
 * Flask 0.12
 * flask-restful 0.3.5
 * flask-script 2.0.5
@@ -21,11 +22,12 @@ The only endpoint setup is: /api/v1/status which returns a status message.
   ├── requirements.txt
   ├── app
   │   ├── __init__.py
-  │   ├── api_v1
-  │   │   ├── __init__.py
-  │   │   ├── routes.py
+  │   └── api_v1
+  │       ├── __init__.py
+  │       ├── routes.py
   └── tests
-  │       └── conftest.py
+          ├── test_routes.py
+          └── conftest.py
   ```
   
 ##Project Setup
@@ -46,3 +48,7 @@ http://localhost:5000/api/v1/status
 
 
 ##Testing
+Will run py.test like: 'py.test --cov=app tests'.
+```
+>> python manage.py test
+```

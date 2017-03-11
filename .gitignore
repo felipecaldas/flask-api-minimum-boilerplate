@@ -3,3 +3,7 @@ venv/
 *.pyc
 .cache/
 instance/
+assets/
+report.html --self-contained-html
+report.html
+.coverage

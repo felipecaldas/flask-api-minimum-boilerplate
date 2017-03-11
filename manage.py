@@ -18,7 +18,7 @@ manager.add_command("shell", Shell(make_context=make_shell_context))
 def test():
     """ Run py.test """
     import pytest
-    pytest.main(['--cov=app', 'tests'])
+    pytest.main(['--cov=app', '--html=report.html', 'tests'])
 
 
 if __name__ == '__main__':
