@@ -14,7 +14,7 @@ he API will be available on /api/v1/
 
 The only endpoint setup is: /api/v1/status which returns a status message.
 
-##Project Structure
+## Project Structure
   ```sh
   ├── README.md
   ├── app.py
@@ -30,7 +30,7 @@ The only endpoint setup is: /api/v1/status which returns a status message.
           └── conftest.py
   ```
   
-##Project Setup
+## Project Setup
 ```
 >> virtualenv venv -p python3
 >> source venv/bin/activate
@@ -47,7 +47,8 @@ http://localhost:5000/api/v1/status
 ```
 
 
-##Testing
+## Testing
+
 Will run py.test like: 'py.test --cov=app tests'.
 ```
 >> python manage.py test
