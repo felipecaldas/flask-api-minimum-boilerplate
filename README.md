@@ -6,7 +6,7 @@ A basic boilerplate for flask with flask-restful and pytest
 * pytest-coverage 2.4.0
 * pytest-html 1.14.2
 * Flask 0.12
-* flask-restful 0.3.5
+* flask-restplus 0.10.1
 * flask-script 2.0.5
 
 The boilerplate builds an API by using Flask's blueprint functionality. 
