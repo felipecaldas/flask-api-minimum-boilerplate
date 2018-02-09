@@ -1,5 +1,5 @@
 # flask-api-minimum-boilerplate
-A basic boilerplate for flask with flask-restful and pytest
+A basic boilerplate for flask with flask-restplus and pytest
 
 * Python 3.6
 * pytest 3.0.6
