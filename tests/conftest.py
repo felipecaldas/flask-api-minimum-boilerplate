@@ -17,17 +17,13 @@ def app(request):
         'SQLALCHEMY_DATABASE_URI': TEST_DATABASE_URI
     }
 
-
     app = create_app('local', settings_override)
-
     ctx = app.app_context()
     ctx.push()
 
-    def tear_down():
-        ctx.pop()
+    yield app
 
-    request.addfinalizer(tear_down)
-    return app
+    ctx.pop()
 
 
 @pytest.fixture
@@ -39,14 +35,13 @@ def client(app):
 def db(app, request):
     """ Session-wide test database """
     _db.drop_all()
-    def teardown():
-        _db.drop_all()
-
     _db.app = app
     _db.create_all()
 
-    request.addfinalizer(teardown)
-    return _db
+    yield _db
+
+    _db.drop_all()
+
 
 
 @pytest.fixture(scope='function')
@@ -59,14 +54,11 @@ def session(db, request):
     session = db.create_scoped_session(options=options)
 
     db.session = session
-    
-    def teardown():
-        transaction.rollback()
-        connection.close()
-        session.remove()
+    yield db.session
 
-    request.addfinalizer(teardown)
-    return session
+    transaction.rollback()
+    connection.close()
+    session.remove()
 
 
 

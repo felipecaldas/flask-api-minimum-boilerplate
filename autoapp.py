@@ -23,7 +23,6 @@ def test():
     from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
     import pytest
 
-
     con = psycopg2.connect(
         dbname='postgres', 
         user=os.getenv('POSTGRES_USER', 'tester'), 
@@ -31,13 +30,14 @@ def test():
         password=os.getenv('POSTGRES_PASSWORD', '12345'),
     )
     con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-    cur = con.cursor()
+    
     try:
+        cur = con.cursor()
         cur.execute('CREATE DATABASE ' + 'flaskdb_test')
+        cur.close()
+        con.close()
     except:
         logging.info("Test database already exists")
-    cur.close()
-    con.close()
 
     pytest.main(['tests', '-v', '-l'])
 

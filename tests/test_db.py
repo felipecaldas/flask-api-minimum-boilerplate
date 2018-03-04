@@ -1,19 +1,14 @@
-from app.models import User, db
-from factories.user_factory import UserFactory
+from app.models import User
 
 
 def test_user_model(session):
-    user = UserFactory()
-    print(user.email)
-    print(user.username)
-    
-    db.session.commit()
+    user = User(
+        username="my username",
+        email = "email@easdf.dk"
+    )
+    session.add(user)
+    session.commit()
 
-    users = User.query.all()
-    print("OUTPUT")
-    print(users)
-    for u in users:
-        print(u)
+    getuser = User.query.filter_by(username=user.username).first()
 
-
-    assert False
+    assert getuser.username is user.username
