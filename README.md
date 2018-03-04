@@ -64,6 +64,8 @@ Will run py.test like: 'py.test --cov=app tests'.
 ```
 >> flask test
 ```
+A test databse will be created if it doesn't already exist.
+
 
 ## Running with docker-compose
 ```
@@ -74,6 +76,3 @@ Will run py.test like: 'py.test --cov=app tests'.
 docker exec -i -t flaskapiminimumboilerplate_app_1 flask test
 ```
 If you get an 'ImportMismatchError', you will have to delete the 'tests/__pycache__' folder and run the test command again.
-
-
-

@@ -7,3 +7,5 @@ assets/
 report.html --self-contained-html
 report.html
 .coverage
+.vscode/
+.pytest_cache/
