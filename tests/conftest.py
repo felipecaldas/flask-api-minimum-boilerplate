@@ -6,7 +6,7 @@ from app import create_app
 from app.models import db as _db
 
 
-TEST_DATABASE_URI = os.getenv('TEST_DATABASE_URI', 'mysql://tester:12345@db/flaskdb_test')
+TEST_DATABASE_URI = os.getenv('TEST_DATABASE_URI', 'postgresql+psycopg2://tester:12345@db/flaskdb_test')
 
 
 @pytest.fixture(scope='session')

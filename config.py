@@ -11,7 +11,7 @@ class Config:
 
 class LocalConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://tester:12345@db/flaskdb'
+    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI_TEST', 'postgresql+psycopg2://tester:12345@db/flaskdb_test')
 
 
 class DevConfig(Config):
