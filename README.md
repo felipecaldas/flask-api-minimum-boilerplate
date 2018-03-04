@@ -1,10 +1,11 @@
 # flask-api-minimum-boilerplate
-A basic boilerplate for Flask with flask-restplus and pytest
+A basic boilerplate for Flask with flask-restplus, postgresql and pytest
 
 * Python 3.6
 * Flask 0.12
 * flask-restplus 0.10.1
 * flask-sqlalchemy 2.3.2
+* psycopg2 2.7.4
 * pytest 3.0.6
 * pytest-cov 2.5.1
 * pytest-html 1.16.1
@@ -24,20 +25,17 @@ The only endpoint setup is: /api/v1/status which returns a status message.
   ├── requirements.txt
   ├── app
   │   ├── __init__.py
+  │   ├── models.py  
   │   └── api_v1
   │       ├── __init__.py
   │       ├── routes.py
   └── tests
           ├── test_routes.py
+          ├── test_db.py
           └── conftest.py
   ```
   
 ## Project Setup
-Setup for mysql on ubuntu:
-```
->> apt-get install python-mysqldb
-```
-
 ```
 >> virtualenv venv -p python3
 >> source venv/bin/activate
