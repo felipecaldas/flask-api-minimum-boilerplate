@@ -10,9 +10,11 @@ services:
       - ./:/usr/src/app
     ports:
       - 5000:5000
+    depends_on:
+      - db
     environment:
       ENV: local
-      FLASK_APP: manage.py
+      FLASK_APP: autoapp.py
       SECRET_KEY: eEnbvGyk]Y8R/BgU
       FLASK_DEBUG: 1
 
@@ -20,9 +22,14 @@ services:
     image: mysql
     ports:
       - 3306:3306
+    volumes:
+      - db-data:/data/db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 12345
       MYSQL_DATABASE: flaskdb
       MYSQL_USER: tester
       MYSQL_PASSWORD: 12345
+
+volumes:
+  db-data:
