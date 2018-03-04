@@ -11,6 +11,7 @@ A basic boilerplate for Flask with flask-restplus, postgresql and pytest
 * pytest-html 1.16.1
 * pytest-sugar 0.9.1
 * pylint 1.8.2
+* factory_boy 2.10.0
 
 The boilerplate builds an API by using Flask's blueprint functionality. 
 he API will be available on /api/v1/

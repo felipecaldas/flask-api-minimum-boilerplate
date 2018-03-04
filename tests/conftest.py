@@ -38,6 +38,7 @@ def client(app):
 @pytest.fixture(scope='session')
 def db(app, request):
     """ Session-wide test database """
+    _db.drop_all()
     def teardown():
         _db.drop_all()
 

@@ -1,10 +1,19 @@
-from app.models import User
+from app.models import User, db
+from factories.user_factory import UserFactory
 
 
 def test_user_model(session):
-    user = User(username='testuser', email="per@per.dk")
+    user = UserFactory()
+    print(user.email)
+    print(user.username)
+    
+    db.session.commit()
 
-    session.add(user)
-    session.commit()
+    users = User.query.all()
+    print("OUTPUT")
+    print(users)
+    for u in users:
+        print(u)
 
-    assert user.id > 0    
+
+    assert False
