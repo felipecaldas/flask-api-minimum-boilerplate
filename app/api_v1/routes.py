@@ -13,7 +13,7 @@ class Status(Resource):
 class DB(Resource):
     def get(self):
         return {
-            "db": "len(user)"
+            "db": "Database here"
         }, 200
 
 
