@@ -1,17 +1,17 @@
 # flask-api-minimum-boilerplate
 A basic boilerplate for Flask with flask-restplus, postgresql and pytest
 
-* Python 3.6
-* Flask 0.12
-* flask-restplus 0.10.1
-* flask-sqlalchemy 2.3.2
-* psycopg2 2.7.4
-* pytest 3.0.6
-* pytest-cov 2.5.1
-* pytest-html 1.16.1
-* pytest-sugar 0.9.1
-* pylint 1.8.2
-* factory_boy 2.10.0
+* Python
+* Flask
+* flask-restplus
+* flask-sqlalchemy
+* psycopg2
+* pytest
+* pytest-cov
+* pytest-html
+* pytest-sugar
+* pylint
+* factory_boy
 
 The boilerplate builds an API by using Flask's blueprint functionality. 
 he API will be available on /api/v1/
