@@ -1,5 +1,5 @@
 # flask-api-minimum-boilerplate
-A basic boilerplate for Flask with flask-restplus, postgresql
+A basic boilerplate for Flask with flask-restplus and postgresql
 
 * Python
 * Flask
